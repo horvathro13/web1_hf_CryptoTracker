@@ -3,7 +3,7 @@ export default function Markets({ coins, loading, favorites, dispatch }) {
         return <p>Piaci adatok betöltése..</p>;
     }
     if (!Array.isArray(coins)) {
-        return <p>Nem sikerült betölteni az adatokat. Próbáld újra később! </p>
+        return <p>Nem sikerült betölteni az adatokat. Próbáld újra később!</p>
     }
     return (
         <div>
@@ -11,7 +11,7 @@ export default function Markets({ coins, loading, favorites, dispatch }) {
             <table>
                 <thead>
                     <tr>
-                        <th>Market Prices</th>
+                        <th>Érme</th>
                         <th>Árfolyam (USD)</th>
                         <th>24ó változás</th>
                         <th>Művelet</th>
@@ -40,7 +40,7 @@ export default function Markets({ coins, loading, favorites, dispatch }) {
                                             dispatch({ type: "ADD_FAVORITE", payload: coin })
                                         }
                                     >
-                                        {isFav ? "Kedvencekben" : "Add to fav"}
+                                        {isFav ? "Hozzáadva" : "Hozzáadás"}
                                     </button>
                                 </td>
                             </tr>

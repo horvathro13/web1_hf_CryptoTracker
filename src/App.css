@@ -2,49 +2,115 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: #0f172a;
 }
 
 .app-container {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .app-container.light {
   background-color: #f4f6f8;
-  color: #1a202c;
+  color: #1e293b;
 }
 
 .app-container.dark {
-  background-color: #12161f;
-  color: #f7fafc;
+  background-color: #0f172a;
+  color: #f1f5f9;
 }
+
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
-.nav-left, .nav-links {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.navbar button {
+  margin-left: 0.75rem;
 }
 
-button {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
-
-button.active {
-  font-weight: bold;
-  text-decoration: underline;
-}
 
 .main-content {
   max-width: 900px;
   margin: 2rem auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light table {
+  background-color: #ffffff;
+}
+
+.dark table {
+  background-color: #1e293b;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+
+td img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: #5578b1;
+  color: white;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+button:hover:not(:disabled) {
+  background-color: #172f63;
+}
+
+button:disabled {
+  background-color: #576272;
+  cursor: not-allowed;
+  opacity: 0.65;
 }
