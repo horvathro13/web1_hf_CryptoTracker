@@ -23,8 +23,19 @@ function favoritesReducer(state, action) {
 }
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
-  const [currentView, setCurrentView] = useState("markets");
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("crypto_theme") || "light";
+  });
+  useEffect(() => {
+    localStorage.setItem("crypto_theme", theme);
+  }, [theme]);
+
+  const [currentView, setCurrentView] = useState(() => {
+    return localStorage.getItem("crypto_currentView") || "markets";
+  });
+  useEffect(() => {
+    localStorage.setItem("crypto_currentView", currentView);
+  }, [currentView]);
 
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
